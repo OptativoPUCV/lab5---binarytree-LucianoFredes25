@@ -14,3 +14,12 @@ Tue 18 Apr 2023 11:34:11 PM UTC:
  tests:  4|7
 total_score: 5/70
 c22c1a2
+Tue 18 Apr 2023 11:48:32 PM UTC: 
+ treemap.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c:92:1: error: expected identifier or ‘(’ before ‘}’ token
+   92 | }
+      | ^
+Compilation failed
+6cc7470

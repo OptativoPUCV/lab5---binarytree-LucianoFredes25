@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "treemap.h"
-
+#include <stdbool.h>
 typedef struct TreeNode TreeNode;
 
 
@@ -73,7 +73,22 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
-    return NULL;
+  /*TreeNode * aux = (TreeNode *) malloc(sizeof(TreeNode));
+  aux = tree->root;
+  while(true){
+    if(aux == NULL)
+      return NULL;
+    if(aux->pair->key == key){
+      tree->current = aux;
+      return aux->pair;
+    }*/
+    if(is_equal(tree, tree->current->pair->key , key)){
+      return tree->current->pair;
+    }
+    else
+      return NULL;
+    
+  }
 }
 
 
