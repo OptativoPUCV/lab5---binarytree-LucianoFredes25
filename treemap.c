@@ -58,7 +58,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     return;
   else
   {
-    printf("aqui");
+    printf("%p", tree->current->pair->key);
     while(tree->current != NULL)
     {
       printf("5");
