@@ -92,11 +92,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     }
 
     if((lower_than_string(aux->pair->key , key)) == 1){
-      aux = aux->right;
+      aux = aux->left;
       printf("1 ");
     }
     else{
-      aux = aux->left;
+      aux = aux->right;
       printf("2 ");
     }
   }
