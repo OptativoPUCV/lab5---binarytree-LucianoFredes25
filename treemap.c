@@ -62,26 +62,26 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     {
       if(tree->current->right == NULL)
       {
-        //printf("1");
+        printf("1");
         tree->current->right = createTreeNode(key, value);
         tree->current->right->parent = tree->current;
         tree->current = tree->current->right;
         return;
       }
-      //printf("2");
+      printf("2");
       tree->current = tree->current->right;
     }
     else
     {
       if(tree->current->left == NULL)
       {
-        //printf("3");
+        printf("3");
         tree->current->left = createTreeNode(key, value);
         tree->current->left->parent = tree->current;
         tree->current = tree->current->left;
         return;
       }
-      //printf("4");
+      printf("4");
       tree->current = tree->current->left;
     }
   }
