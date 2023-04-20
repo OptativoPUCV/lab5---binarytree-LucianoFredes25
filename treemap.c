@@ -55,45 +55,44 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   }
   
   if(searchTreeMap(tree,key) != NULL) return;
-
-  printf("0");
-  
-  while(tree->current != NULL)
-  {
-    printf("5");
-    if(tree->lower_than(tree->current->pair->key , key))
+  else{
+    while(tree->current != NULL)
     {
-      if(tree->current->right == NULL)
+      printf("5");
+      if(tree->lower_than(tree->current->pair->key , key))
       {
-        printf("1");
-        tree->current->right = createTreeNode(key, value);
-        tree->current->right->parent = tree->current;
+        if(tree->current->right == NULL)
+        {
+          printf("1");
+          tree->current->right = createTreeNode(key, value);
+          tree->current->right->parent = tree->current;
+          tree->current = tree->current->right;
+          return;
+        }
+        printf("2");
         tree->current = tree->current->right;
-        break;
       }
-      printf("2");
-      tree->current = tree->current->right;
-    }
-    else
-    {
-      if(tree->current->left == NULL)
+      else
       {
-        printf("3");
-        tree->current->left = createTreeNode(key, value);
-        tree->current->left->parent = tree->current;
+        if(tree->current->left == NULL)
+        {
+          printf("3");
+          tree->current->left = createTreeNode(key, value);
+          tree->current->left->parent = tree->current;
+          tree->current = tree->current->left;
+          return;
+        }
+        printf("4");
         tree->current = tree->current->left;
-        break;
       }
-      printf("4");
-      tree->current = tree->current->left;
     }
   }
 }
-
-
-TreeNode * minimum(TreeNode * x){
-
-    return NULL;
+  
+  
+  TreeNode * minimum(TreeNode * x){
+  
+      return NULL;
 }
 
 
