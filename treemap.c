@@ -75,22 +75,14 @@ void eraseTreeMap(TreeMap * tree, void* key){
 Pair * searchTreeMap(TreeMap * tree, void* key) {
   TreeNode * aux = (TreeNode *)malloc(sizeof(TreeNode));
   aux = tree->root;
-  printf("%p\n", key);
   while(true){
-    if(aux == NULL)
-      return NULL;
-    if(aux->pair->key == key){
+    if (is_equal(tree, aux->pair->key , key) == 1){
       printf("1");
-      return aux->pair;
     }
-    if(aux->pair->key > key){
-      printf("2");
-      aux = aux->right;
-    }  
     else{
-      printf("3");
-      aux = aux->left;
-    }  
+      printf("0");
+      break;
+    }
   }
 }
 
