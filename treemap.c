@@ -76,14 +76,19 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   TreeNode * aux = (TreeNode *)malloc(sizeof(TreeNode));
   aux = tree->root;
   while(true){
-    if (is_equal(tree, aux->pair->key , key) == 1){
-      printf("1");
-      break;
+    void * auxPair = aux->pair->key;
+    if(aux == NULL)
+      return NULL;
+
+    if(auxPair == key){
+      return aux->pair;
+      tree->current = aux;
     }
-    else{
-      printf("0");
-      break;
-    }
+
+    if(auxPair < key)
+      aux = aux->left;
+    else
+      aux = aux->right;
   }
 }
 
