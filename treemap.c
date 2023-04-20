@@ -139,7 +139,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     tree->current = node->right;
     TreeNode * min = minimum(tree->current);
     node->pair = min->pair;
-    free(min);
+    min = NULL;
     //eraseTreeMap(tree, min->pair->key);
   }
 }
