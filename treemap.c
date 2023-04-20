@@ -58,10 +58,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   
   while(tree->current != NULL)
   {
-    
     if(tree->lower_than(tree->current->pair->key , key))
     {
-      if(! tree->current->right )
+      if(tree->current->right == NULL)
       {
         printf("1");
         tree->current->right = createTreeNode(key, value);
@@ -74,7 +73,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     }
     else
     {
-      if(! tree->current->left)
+      if(tree->current->left == NULL)
       {
         printf("3");
         tree->current->left = createTreeNode(key, value);
