@@ -88,8 +88,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   
   
   TreeNode * minimum(TreeNode * x){
-  
-      return NULL;
+    //TreeNode * aux = (TreeNode *) malloc(sizeof(TreeNode));
+    while(x != NULL)
+    {
+      if(x->left != NULL)
+        x = x->left;
+      else
+        return x;
+    }
 }
 
 
