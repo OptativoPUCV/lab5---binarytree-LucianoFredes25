@@ -69,7 +69,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current->right = createTreeNode(key, value);
         tree->current->right->parent = tree->current;
         tree->current = tree->current->right;
-        return;
+        break;
       }
       printf("2");
       tree->current = tree->current->right;
@@ -82,7 +82,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         tree->current->left = createTreeNode(key, value);
         tree->current->left->parent = tree->current;
         tree->current = tree->current->left;
-        return;
+        break;
       }
       printf("4");
       tree->current = tree->current->left;
