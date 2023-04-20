@@ -460,3 +460,9 @@ treemap.c:130:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 c890f42
+Thu 20 Apr 2023 06:11:46 PM UTC: 
+ treemap.c | 44 +-------------------------------------------
+ 1 file changed, 1 insertion(+), 43 deletions(-)
+ tests:  11|6
+total_score: 15/70
+63c4813
