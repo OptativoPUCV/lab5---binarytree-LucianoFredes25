@@ -74,7 +74,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     }
     else
     {
-      if(tree->current->left == NULL)
+      if(! tree->current->left)
       {
         printf("3");
         tree->current->left = createTreeNode(key, value);
