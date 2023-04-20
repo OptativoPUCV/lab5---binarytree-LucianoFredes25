@@ -54,8 +54,11 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     return;
   }
   
-  if(searchTreeMap(tree,key) != NULL) return;
-  else{
+  if(searchTreeMap(tree,key) != NULL) 
+    return;
+  else
+  {
+    printf("aqui");
     while(tree->current != NULL)
     {
       printf("5");
