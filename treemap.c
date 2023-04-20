@@ -58,7 +58,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
   printf("0");
   
-  while(true)
+  while(tree->current != NULL)
   {
     printf("5");
     if(tree->lower_than(tree->current->pair->key , key))
