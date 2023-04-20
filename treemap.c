@@ -79,12 +79,12 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     if(aux == NULL)
       return NULL;
 
-    if(strcmp(aux->pair->key , key) == 0){
+    if(is_equal(tree , aux->pair->key , key) == 0){
       tree->current = aux;
       return aux->pair;
     }
 
-    if(aux->pair->key < key){
+    if((lower_than_string(aux->pair->key , key)) == 1){
       aux = aux->right;
       printf("1 ");
     }
