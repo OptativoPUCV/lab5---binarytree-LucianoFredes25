@@ -78,12 +78,18 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   while(true){
     if(aux == NULL)
       return NULL;
-    if(aux->pair->key == key)
+    if(aux->pair->key == key){
+      printf("1");
       return aux->pair;
-    if(aux->pair->key > key)
+    }
+    if(aux->pair->key > key){
+      printf("2");
       aux = aux->right;
-    else
+    }  
+    else{
+      printf("3");
       aux = aux->left;
+    }  
   }
 }
 
