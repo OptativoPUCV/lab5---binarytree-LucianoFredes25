@@ -138,9 +138,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   {
     tree->current = node->right;
     TreeNode * min = minimum(tree->current);
+    eraseTreeMap(tree, min->pair->key);
     node->pair = min->pair;
-    min = NULL;
-    //eraseTreeMap(tree, min->pair->key);
+    
   }
 }
 
