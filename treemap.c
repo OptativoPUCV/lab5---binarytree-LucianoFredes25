@@ -19,6 +19,12 @@ struct TreeMap {
     int (*lower_than) (void* key1, void* key2);
 };
 
+int lower_than_string(void* key1, void* key2){
+    char* k1=(char*) key1;
+    char* k2=(char*) key2;
+    if(strcmp(k1,k2)<0) return 1;
+    return 0;
+}
 
 int is_equal(TreeMap* tree, void* key1, void* key2){
     if(tree->lower_than(key1,key2)==0 &&  
@@ -74,26 +80,16 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 
 Pair * searchTreeMap(TreeMap * tree, void* key) {
-  TreeNode * aux = (TreeNode *)malloc(sizeof(TreeNode));
-  aux = tree->root;
-  aux->pair->key = key;
+  tree->current = tree->root;
   while(true){
-    if(aux == NULL)
-      return NULL;
+    if(tree->current == NULL) return NULL;
+    if(is_equal(tree, tree->current->pair->key, key))
+      return tree->current->pair;
 
-    if(is_equal(tree , aux->pair->key , key) == 0){
-      tree->current = aux;
-      return aux->pair;
-    }
-
-    if((lower_than_string(aux->pair->key , key)) == 1){
-      aux = aux->left;
-      printf("1 ");
-    }
-    else{
-      aux = aux->right;
-      printf("2 ");
-    }
+    if(tree->lower_than(tree->current->pair->key , key))
+      tree->current = tree->current->right;
+    else
+      tree->current = tree->current->left;
   }
 }
 

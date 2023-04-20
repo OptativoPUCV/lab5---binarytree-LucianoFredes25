@@ -227,3 +227,9 @@ treemap.c:89:9: error: implicit declaration of function ‘lower_than_string’ 
 cc1: all warnings being treated as errors
 Compilation failed
 2bfb819
+Thu 20 Apr 2023 05:06:48 PM UTC: 
+ treemap.c | 34 +++++++++++++++-------------------
+ 1 file changed, 15 insertions(+), 19 deletions(-)
+ tests:  11|6
+total_score: 15/70
+f87b382
