@@ -100,13 +100,32 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-  //3 casos
-  if(node->left == NULL && node->right == NULL){
+  //sin hijos
+  if(node->left == NULL && node->right == NULL)
+  {
     if(node->parent->left == node){
       node->parent->left = NULL;
     }
     else{
       node->parent->right = NULL;
+    }
+  }
+  else if(node->left == NULL && node->right != NULL)
+  {
+    if(node->parent->left == node){
+      node->parent->left = node->right;
+    }
+    else{
+      node->parent->right = node->right;
+    }
+  }
+  else if(node->left != NULL && node->right == NULL)
+  {
+    if(node->parent->left == node){
+      node->parent->left = node->left;
+    }
+    else{
+      node->parent->right = node->left;
     }
   }
 }
