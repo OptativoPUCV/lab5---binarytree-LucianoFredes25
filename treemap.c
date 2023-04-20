@@ -100,7 +100,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-  
+  //3 casos
+  if(node->left == NULL && node->right == NULL){
+    node = NULL;
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
