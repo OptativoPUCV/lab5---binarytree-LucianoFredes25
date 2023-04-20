@@ -79,7 +79,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     if(aux == NULL)
       return NULL;
 
-    if(aux->pair->key == key){
+    if(strcmp(aux->pair->key , key) == 0){
       return aux->pair;
       tree->current = aux;
     }
