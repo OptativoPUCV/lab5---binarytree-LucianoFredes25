@@ -53,7 +53,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     tree->root = createTreeNode(key, value);
     return;
   }
-  printf("lol");
   
   if(searchTreeMap(tree,key) != NULL) return;
   
