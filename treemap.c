@@ -57,22 +57,20 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       //si es menor
       int resultado = tree->lower_than(tree->current->pair->key , key);
       if(resultado == 1){
-        if(tree->current->right == NULL){
-          tree->current->right->pair->key = key;
-          tree->current->right->pair->value = value;
+        tree->current = tree->current->right;
+        if(tree->current == NULL){
+          tree->current->pair->key = key;
+          tree->current->pair->value = value;
           break;
         }
-        else
-          tree->current = tree->current->right;
       }
       else{
-        if(tree->current->left == NULL){
-          tree->current->left->pair->key = key;
-          tree->current->left->pair->value = value;
+        tree->current = tree->current->left;
+        if(tree->current == NULL){
+          tree->current->pair->key = key;
+          tree->current->pair->value = value;
           break;
         }
-        else
-          tree->current = tree->current->left;
       }
     }
   }
