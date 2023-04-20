@@ -399,3 +399,34 @@ Thu 20 Apr 2023 06:07:31 PM UTC:
  tests:  11|6
 total_score: 15/70
 811798f
+Thu 20 Apr 2023 06:10:50 PM UTC: 
+ treemap.c | 49 ++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 48 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:91:22: error: ‘new’ undeclared (first use in this function)
+   91 |         tree->root = new TreeNode;
+      |                      ^~~
+treemap.c:91:22: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:91:25: error: expected ‘;’ before ‘TreeNode’
+   91 |         tree->root = new TreeNode;
+      |                         ^~~~~~~~~
+      |                         ;
+treemap.c:92:31: error: expected ‘;’ before ‘Pair’
+   92 |         tree->root->pair = new Pair(key, value);
+      |                               ^~~~~
+      |                               ;
+treemap.c:118:30: error: expected ‘,’ or ‘;’ before ‘TreeNode’
+  118 |     TreeNode* new_node = new TreeNode;
+      |                              ^~~~~~~~
+treemap.c:119:25: error: expected ‘;’ before ‘Pair’
+  119 |     new_node->pair = new Pair(key, value);
+      |                         ^~~~~
+      |                         ;
+At top level:
+treemap.c:88:8: error: ‘insertTreeMap’ defined but not used [-Werror=unused-function]
+   88 |   void insertTreeMap(TreeMap* tree, void* key, void* value){
+      |        ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9d11204
