@@ -184,15 +184,5 @@ Pair * nextTreeMap(TreeMap * tree) {
       tree->current = minimum(tree->current->right);
       return tree->current->pair;
     }
-    else{
-      Pair * aux = tree->current->pair;
-      while(true){
-        if(strcmp(tree->current->pair->key, aux->key) > 0)
-          return tree->current->pair;
-        else
-          tree->current = tree->current->parent;
-        
-          
-      }
-    }
+    
 }
