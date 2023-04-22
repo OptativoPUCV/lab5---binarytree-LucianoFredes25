@@ -190,7 +190,10 @@ Pair * nextTreeMap(TreeMap * tree) {
         if((tree->lower_than(aux->key , tree->current->pair->key) == 1))
           return tree->current->pair;
         else
+        {
+          printf("1 ");
           tree->current = tree->current->parent;
+        }
       }
       return NULL;
     }
