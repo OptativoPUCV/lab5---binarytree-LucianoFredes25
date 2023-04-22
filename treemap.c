@@ -189,7 +189,10 @@ Pair * nextTreeMap(TreeMap * tree) {
       Pair * aux = tree->current->pair;
       while(true){
         if((tree->lower_than(aux->key , tree->current->pair->key) == 1))
+        {
+          printf("3 ");
           return tree->current->pair;
+        }
         else
         {
           printf("1 ");
