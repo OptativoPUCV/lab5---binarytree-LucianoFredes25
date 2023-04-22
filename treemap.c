@@ -175,13 +175,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
   if(aux != NULL)
     return aux;
   else{
-    tree->current =  minimum(tree->root);
+    return NULL;
+    /*tree->current =  minimum(tree->root);
     while(true){
       if(tree->lower_than(key , tree->current->pair->key))
         return tree->current->pair->key;
       else
         tree->current->pair = nextTreeMap(tree);
-  }
+  }*/
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
