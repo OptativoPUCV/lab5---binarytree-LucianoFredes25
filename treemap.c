@@ -185,15 +185,16 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }
     else{
-      TreeNode * aux = tree->current;
+      if(strcmp(tree->current->pair->key , tree->current->parent->pair->key) < 0)
+        return NULL;
+      Pair * aux = tree->current->pair;
       while(true){
-        if((lower_than(tree->current->pair->key , aux->pair->key)) == 1){
-            tree->current = tree->current->parent;
-            printf("1");
-          }
-          else
-            return tree->current->pair;
-        }
+        if(strcmp(tree->current->pair->key, aux->key) > 0)
+          return tree->current->pair;
+        else
+          tree->current = tree->current->parent;
+        
+          
       }
     }
 
