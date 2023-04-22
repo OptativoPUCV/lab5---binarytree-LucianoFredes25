@@ -200,7 +200,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
         if(is_equal(tree, tree->current->pair->key, tree->root->pair->key))
         {
-          printf("3 ");
+          printf("4 ");
           return NULL;
         } 
       }
