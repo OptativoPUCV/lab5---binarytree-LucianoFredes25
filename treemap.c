@@ -193,6 +193,8 @@ Pair * nextTreeMap(TreeMap * tree) {
           tree->current = tree->current->parent;
         if(is_equal(tree, tree->current->pair->key, tree->root->pair->key))
           return tree->current->pair;
+        if(tree->lower_than(aux->key , tree->current->pair->key) < 0)
+          return NULL;
       }
       return NULL;
     }
