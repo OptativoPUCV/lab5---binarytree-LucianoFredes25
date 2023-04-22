@@ -186,7 +186,7 @@ Pair * nextTreeMap(TreeMap * tree) {
   while(true){
     if(tree->current->right != NULL){
       tree->current = minimum(tree->current->right);
-      printf("2 ");
+      
       return tree->current->pair;
     }
     else{
@@ -195,19 +195,18 @@ Pair * nextTreeMap(TreeMap * tree) {
       while(true){
         if((tree->lower_than(aux->key , tree->current->pair->key) == 1))
         {
-          printf("3 ");
+          
           return tree->current->pair;
         }
         else
         {
-          printf("1 ");
+          
           prev = tree->current;
           tree->current = tree->current->parent;
         }
         if(is_equal(tree, tree->current->pair->key, tree->root->pair->key) &&
           is_equal(tree, tree->current->right->pair->key, prev->pair->key))
         {
-          printf("4 ");
           return NULL;
         } 
       }
