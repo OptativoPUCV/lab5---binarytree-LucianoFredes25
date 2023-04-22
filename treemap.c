@@ -185,17 +185,12 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }
     else{
-      //if(tree->current == tree->root && tree->current->right == NULL)
-      //  return NULL;
       Pair * aux = tree->current->pair;
-      while(tree->current <= tree->root){
+      while(true){
         if((tree->lower_than(aux->key , tree->current->pair->key) == 1))
           return tree->current->pair;
         else
-        {
-          
           tree->current = tree->current->parent;
-        }
       }
       return NULL;
     }
