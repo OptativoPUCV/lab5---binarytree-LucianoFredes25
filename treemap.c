@@ -180,21 +180,9 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if(tree->current->right != NULL){
-      tree->current = minimum(tree->current);
-      return tree->current->pair;
-    }
-    else{
-      TreeNode * aux = tree->current;
-      while(true){
-        if((tree->lower_than(tree->current->pair->key , aux->pair->key)) == 1){
-            tree->current = tree->current->parent;
-            
-          }
-            
-          else
-            return tree->current->pair;
-        }
-      }
-    }
+  if(tree->current->right != NULL){
+    tree->current = minimum(tree->current->right);
+    return tree->current->pair;
+  }
+}
 
