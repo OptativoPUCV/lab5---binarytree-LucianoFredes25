@@ -174,6 +174,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
   Pair * aux = searchTreeMap(tree, key);
   if(aux != NULL)
     return aux;
+  return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
