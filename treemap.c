@@ -199,7 +199,10 @@ Pair * nextTreeMap(TreeMap * tree) {
           tree->current = tree->current->parent;
         }
         if(is_equal(tree, tree->current->pair->key, tree->root->pair->key))
+        {
+          printf("3 ");
           return NULL;
+        } 
       }
       return NULL;
     }
