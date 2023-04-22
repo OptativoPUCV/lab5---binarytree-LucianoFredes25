@@ -181,6 +181,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL){
+      printf("1 ");
       tree->current = minimum(tree->current->right);
       return tree->current->pair;
     }
@@ -193,7 +194,7 @@ Pair * nextTreeMap(TreeMap * tree) {
           return tree->current->pair;
         else
         {
-          printf("1 ");
+          
           tree->current = tree->current->parent;
         }
       }
