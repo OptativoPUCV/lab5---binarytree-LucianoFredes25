@@ -179,7 +179,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
     tree->current =  minimum(tree->root);
     while(true){
       if(tree->lower_than(key , tree->current->pair->key))
+      {
+        printf("2 ");
         return tree->current->pair->key;
+      }  
       else
       {
         printf("1 ");
