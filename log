@@ -911,3 +911,33 @@ treemap.c:210:7: error: expected expression before ‘}’ token
       |       ^
 Compilation failed
 c758e08
+Sat 22 Apr 2023 03:17:46 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:205:75: error: expected ‘)’ before ‘{’ token
+  205 |           is_equal(tree, tree->current->right->pair->key, prev->pair->key)
+      |                                                                           ^
+      |                                                                           )
+  206 |         {
+      |         ~                                                                  
+treemap.c:204:11: note: to match this ‘(’
+  204 |         if(is_equal(tree, tree->current->pair->key, tree->root->pair->key) &&
+      |           ^
+treemap.c:212:5: error: expected expression before ‘}’ token
+  212 |     }
+      |     ^
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+77d4b9a
