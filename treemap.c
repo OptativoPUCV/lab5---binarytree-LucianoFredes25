@@ -182,6 +182,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL){
       tree->current = minimum(tree->current->right);
+      printf("2 ")
       return tree->current->pair;
     }
     else{
