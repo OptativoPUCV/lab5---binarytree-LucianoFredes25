@@ -186,7 +186,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       else
       {
         printf("1 ");
-        tree->current->pair = nextTreeMap(tree);
+        nextTreeMap(tree);
       }
     }
   }
